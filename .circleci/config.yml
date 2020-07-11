@@ -12,8 +12,8 @@ jobs:
           - "54:93:c0:41:d7:31:be:da:97:8d:9a:4f:28:85:35:5d"
       - checkout
       - run:
-        name: Install
-        command: npm install
+          name: Install
+          command: npm install
       - run:
-        name: build
-        command: npm run build
+          name: build
+          command: npm run build
