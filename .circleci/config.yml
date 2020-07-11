@@ -1,9 +1,17 @@
- version: 2
- jobs: 
-   one: 
-     docker: 
-       - image: circleci/node:10 
-     steps:
-       - checkout 
-       - run: echo "A first hello" 
-       - run: npm -v
+version: 2.1
+orbs:
+  node: circleci/node@1.1.6
+jobs:
+  build-and-test:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: "npm install"
+            - run: npm -v
+workflows:
+    build-and-test:
+      jobs:
+        - build-and-test
