@@ -7,12 +7,13 @@ jobs:
       only:
         - master
     steps:
-      - add_ssh_keys: 
-        fingerprints: [54:93:c0:41:d7:31:be:da:97:8d:9a:4f:28:85:35:5d]
+      - add_ssh_keys:
+        fingerprints:
+          - "54:93:c0:41:d7:31:be:da:97:8d:9a:4f:28:85:35:5d"
       - checkout
       - run:
           name: Install
           command: npm install
       - run:
-          name: build
+          name: Build
           command: npm run build
